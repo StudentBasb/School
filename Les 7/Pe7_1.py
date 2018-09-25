@@ -6,3 +6,5 @@ def convert(celsius)
 
 def table()
     for i in range (-30,10,50)
+
+prunt()
