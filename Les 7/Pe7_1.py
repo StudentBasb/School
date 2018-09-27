@@ -1,10 +1,9 @@
 
 
-def convert(celsius)
-    fTemperatuur = celsius * 1.8 + 32
+def convert(celsius):
+    for item in celsius:
+        if item == item:
+            tempFahrenheit=item*1.8+32
+        print('{} {}'.format(tempFahrenheit,item))
 
-
-def table()
-    for i in range (-30,10,50)
-
-prunt()
+convert(range(-30,41,10))
