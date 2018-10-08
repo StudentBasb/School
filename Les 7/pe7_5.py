@@ -1,12 +1,13 @@
 def gemiddelde(zin):
     totaal = 0
-    for item in zin:
-        totaal=totaal + len(zin)
-    return totaal
+    gesplit = zin.split()
+    for item in gesplit:
+        totaal = totaal + len(item)
+    return  len(zin) /totaal
 
 
 zin = input('Voer een zin in:')
-gesplit = zin.split()
 
 
-print('Het gemiddelde lengte van de woorden zijn:{}'.format(zin))
+
+print('Het gemiddelde lengte van de woorden zijn:{}'.format(gemiddelde(zin)))

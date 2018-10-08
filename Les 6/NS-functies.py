@@ -1,6 +1,5 @@
-
 def standaardprijs(afstandKM):
-    if afstandKM >=80:
+    if afstandKM >= 80:
         prijs = 15 + 0.60 * afstandKM
         return prijs
     elif afstandKM > 0:
@@ -11,13 +10,13 @@ def standaardprijs(afstandKM):
         return prijs
 
 
-def ritprijs(leeftijd,weekendrit,afstandKM):
-    prijsZonderKorting=standaardprijs(afstandKM)
+def ritprijs(leeftijd, weekendrit, afstandKM):
+    prijsZonderKorting = standaardprijs(afstandKM)
     if leeftijd >= 65 and weekendrit == true:
-        weekend65plus= prijsZonderKorting *0.65
+        weekend65plus = prijsZonderKorting * 0.65
         return weekend65plus
     elif leeftijd <= 12 and weeekendrit == true:
-        weekend12min=prijsZonderKorting*0.65
+        weekend12min = prijsZonderKorting * 0.65
         return weekend12min
     elif weekendrit == true:
         kortings_prijs = prijsZonderKorting * 0.60
@@ -31,17 +30,21 @@ def ritprijs(leeftijd,weekendrit,afstandKM):
     else:
         return prijsZonderKorting
 
+
 totaalprijs = 0
 afstandKM = eval(input('Hoeveel KM reis je?'))
-weekendrit = input('Reis je in het weekend?')=='ja'
+weekendrit = input('Reis je in het weekend?') == 'ja'
 
-aantalpersonen=eval(input('Met hoeveel personen reis je?'))
+aantalpersonen = eval(input('Met hoeveel personen reis je?'))
 
-def leeftijd(aantalpersonen,afstandKM,weekendrit,totaalprijs):
+
+def leeftijd(aantalpersonen, afstandKM, weekendrit, totaalprijs):
     while aantalpersonen > 0:
-        Leeftijd=eval(input('Hoe oud is deze persoon?'))
-        totaalprijs=ritprijs(Leeftijd,weekendrit,afstandKM)+totaalprijs
+        Leeftijd = eval(input('Hoe oud is deze persoon?'))
+        totaalprijs = ritprijs(Leeftijd, weekendrit, afstandKM) + totaalprijs
+        aantalpersonen = aantalpersonen - 1
     if aantalpersonen == 0:
         return totaalprijs
 
-print(leeftijd(aantalpersonen,afstandKM,weekendrit,totaalprijs))
+
+print(leeftijd(aantalpersonen, afstandKM, weekendrit, totaalprijs))
